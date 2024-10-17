@@ -127,7 +127,7 @@ app.post('/webhook-kiwify', (req, res) => {
 
 // Rota para simular o recebimento do webhook e envio do e-mail (para testar sem pagar)
 app.post('/simular-webhook', (req, res) => {
-  const email = 'brefustorciutoe@example.com'; // Coloque o e-mail de teste
+  const email = 'brefustorciutoe@gmail.com'; // Coloque o e-mail de teste
   const clienteNome = 'felipe'; // Coloque o nome do cliente aqui
   const siteUrl = `https://homenagem-on.onrender.com${clienteNome}-site.html`; // Use o domínio do seu site hospedado no Render
 
