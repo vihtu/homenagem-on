@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Homenagem</title>
+</head>
+<body>
+    <h1>Crie seu site de homenagem</h1>
+    <form action="/iniciar-pagamento" method="POST" enctype="multipart/form-data">
+        <label for="nome">Nome do parceiro:</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="homenagem">Homenagem:</label>
+        <textarea id="homenagem" name="homenagem" required></textarea>
+        
+        <label for="fotos">Fotos:</label>
+        <input type="file" id="fotos" name="fotos" multiple accept="image/*" required>
+        
+        <button type="submit">Iniciar Pagamento</button>
+    </form>
+</body>
+</html>

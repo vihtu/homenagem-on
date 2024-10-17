@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #e63946;
+}
+
+#homenagem {
+    font-size: 1.5rem;
+    color: #f1faee;
+    margin: 20px 0;
+}
+
+.foto-container {
+    position: relative;
+}
+
+.foto-casal {
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.coracoes {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float 3s ease-in-out infinite;
+}
+
+.coracao {
+    font-size: 2rem;
+    animation: subir 1s ease-in-out infinite alternate;
+}
+
+@keyframes subir {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -10px); }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    #homenagem {
+        font-size: 1.2rem;
+    }
+
+    .foto-casal {
+        width: 100%;
+    }
+}

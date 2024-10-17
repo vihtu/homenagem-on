@@ -1,0 +1,58 @@
+
+    <html>
+      <head>
+        <title>z e você</title>
+        <style>
+          body {
+            text-align: center;
+            background-color: #f8e8e8;
+            font-family: Arial, sans-serif;
+          }
+          h1 {
+            color: #ff69b4;
+          }
+          p {
+            color: #333;
+            font-size: 18px;
+          }
+          img {
+            max-width: 300px;
+            margin: 20px;
+            border-radius: 10px;
+          }
+          .flores {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            z-index: -1;
+            background: url('URL_DAS_FLORES') no-repeat center center fixed;
+            background-size: cover;
+          }
+          .coracao {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('URL_DO_CORACAO') no-repeat center center;
+            background-size: contain;
+            animation: subir 5s infinite;
+          }
+          @keyframes subir {
+            0% { bottom: -50px; }
+            50% { bottom: 100%; }
+            100% { bottom: -50px; }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="flores"></div>
+        <h1>z e você</h1>
+        <p>z</p>
+        <img src="/uploads/fotos/1729193053901.jpg" alt="Foto do casal">
+        <div class="coracao" style="left: 20%; animation-delay: 0s;"></div>
+        <div class="coracao" style="left: 40%; animation-delay: 1s;"></div>
+        <div class="coracao" style="left: 60%; animation-delay: 2s;"></div>
+      </body>
+    </html>
+  
