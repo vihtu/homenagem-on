@@ -28,8 +28,8 @@ app.use('/uploads', express.static('uploads'));
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'jerudusizausu@gmail.com',
-    pass: 'gta5free'
+    user: 'SEU_EMAIL@gmail.com',
+    pass: 'SUA_SENHA'
   }
 });
 
@@ -101,7 +101,7 @@ app.post('/webhook-kiwify', (req, res) => {
   // Verifica se o pagamento foi concluído com sucesso
   if (status === 'completed') {
     const clienteNome = 'NOME_DO_CLIENTE'; // Você pode ajustar isso conforme o necessário
-    const siteUrl = `https://SEU_DOMINIO/render.com/sites/${clienteNome}-site.html`; // Ajuste se necessário
+    const siteUrl = `http://localhost:3000/sites/${clienteNome}-site.html`; // Ajuste se necessário
 
     // Configura o e-mail a ser enviado com a URL da homenagem
     const mailOptions = {
@@ -123,31 +123,6 @@ app.post('/webhook-kiwify', (req, res) => {
   } else {
     res.status(400).send('Pagamento não concluído');
   }
-});
-
-// Rota para simular o recebimento do webhook e envio do e-mail (para testar sem pagar)
-app.post('/simular-webhook', (req, res) => {
-  const email = 'brefustorciutoe@gmail.com'; // Coloque o e-mail de teste
-  const clienteNome = 'felipe'; // Coloque o nome do cliente aqui
-  const siteUrl = `https://homenagem-on.onrender.com${clienteNome}-site.html`; // Use o domínio do seu site hospedado no Render
-
-  // Configura o e-mail a ser enviado com a URL da homenagem
-  const mailOptions = {
-    from: 'SEU_EMAIL@gmail.com',
-    to: email,
-    subject: 'Sua Homenagem',
-    text: `Aqui está a URL da sua homenagem: ${siteUrl}`
-  };
-
-  // Envia o e-mail para o cliente
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return console.log('Erro ao enviar e-mail:', error);
-    }
-    console.log('E-mail enviado:', info.response);
-  });
-
-  res.status(200).send('Simulação de webhook concluída e e-mail enviado');
 });
 
 // Servir os sites gerados
